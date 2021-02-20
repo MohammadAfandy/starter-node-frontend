@@ -1,0 +1,13 @@
+import api from './api';
+import config from 'src/config';
+const { backendUrl } = config;
+
+export const login = (payload) => {
+  return api(backendUrl)
+    .post('auth/login', payload)
+    .then((response) => {
+      return response;
+    }).catch((error) => {
+      return error;
+    });
+}
